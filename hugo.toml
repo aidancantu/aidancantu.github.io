@@ -1,0 +1,5 @@
+baseURL = 'https://aidancantu.com/'
+languageCode = 'en-us'
+title = 'Cantu Page'
+theme = 'papermodx'
+publishDir = 'docs'
