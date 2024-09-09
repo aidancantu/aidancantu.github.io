@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Aidan Cantu</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://aidancantu.com/posts/</link>
     <description>Recent content in Posts on Aidan Cantu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://aidancantu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Algorithm that Every Engineer Should Know</title>
-      <link>http://localhost:1313/posts/the-algorithm-every-engineer-should-know/</link>
+      <link>https://aidancantu.com/posts/the-algorithm-every-engineer-should-know/</link>
       <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/the-algorithm-every-engineer-should-know/</guid>
+      <guid>https://aidancantu.com/posts/the-algorithm-every-engineer-should-know/</guid>
       <description>Engineering is an art form. We like to imagine that engineers plan everything out and know exactly what will happen.
 But this is not reality. With limited information and limited time, designers have to make choices that effectively balance cost, effort, and risk. In any project, you can only minimize two of those three factors. Hence, the &amp;ldquo;art&amp;rdquo; of an engineer lies in their intuition - to make design choices they believe are optimal, while mitigating the difficulties of the real-world.</description>
       <content:encoded><![CDATA[<p>Engineering is an art form. We like to imagine that engineers plan everything out and know exactly what will happen.</p>
