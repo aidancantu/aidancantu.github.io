@@ -1,11 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Cantu Page</title>
-    <link>https://aidancantu.com/</link>
-    <description>Recent content on Cantu Page</description>
+    <title>Aidan Cantu</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Aidan Cantu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Jun 2024 00:02:16 -0700</lastBuildDate><atom:link href="https://aidancantu.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Algorithm that Every Engineer Should Know</title>
+      <link>http://localhost:1313/posts/the-algorithm-every-engineer-should-know/</link>
+      <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/the-algorithm-every-engineer-should-know/</guid>
+      <description>Engineering is an art form. We like to imagine that engineers plan everything out and know exactly what will happen.
+But this is not reality. With limited information and limited time, designers have to make choices that effectively balance cost, effort, and risk. In any project, you can only minimize two of those three factors. Hence, the &amp;ldquo;art&amp;rdquo; of an engineer lies in their intuition - to make design choices they believe are optimal, while mitigating the difficulties of the real-world.</description>
+      <content:encoded><![CDATA[<p>Engineering is an art form. We like to imagine that engineers plan everything out and know exactly what will happen.</p>
+<p>But this is not reality. With limited information and limited time, designers have to make choices that effectively balance cost, effort, and risk. In any project, you can only minimize two of those three factors. Hence, the &ldquo;art&rdquo; of an engineer lies in their intuition - to make design choices <em>they</em> believe are optimal, while mitigating the difficulties of the real-world. And the best engineers know where to make tradeoffs in their work.</p>
+<p>It&rsquo;s hard (if not impossible) to &ldquo;train&rdquo; your intuition to be better, other than by learning more about your field. But, you <em>can</em> change your workflows to be more efficient. The Algorithm, as it is dubbed, is a 5-step procedure that engineers should follow to ensure effort is not wasted.</p>
+<h1 id="the-algorithm">The Algorithm</h1>
+<ol>
+<li>Question and Understand the Requirements</li>
+<li>Delete Unnecessary Parts</li>
+<li>Simplify</li>
+<li>Accelerate</li>
+<li>Automate</li>
+</ol>
+<p>If you complete your project in that exact order, you will have an efficient workflow. Let me explain each step:</p>
+<h2 id="question-the-requirements">Question the Requirements</h2>
+<p>Any great project is initially just a design on paper. But before any design is started, the engineer must know what they are designing.</p>
+<p>That&rsquo;s a pretty obvious statement, yet too many engineers jump into projects before they fully understand what they want their final project to be. You need hard numbers, facts, and measureable objectives to achieve. You should be asking:</p>
+<ul>
+<li>What is my budget/available resources?</li>
+<li>How long do I have?</li>
+<li>What is the available space for my product?</li>
+<li>How long does my product need to last for?</li>
+</ul>
+<p>And, most importantly, you absolutely must know: <strong>What is the goal of this project?</strong> You need to go to superiors and co-workers to answer these questions. Talk to people. If a requirement is unclear, discuss it thoroughly.</p>
+<p>And then, finally, you can begin to question the requirements. Now you need to turn around and ask:</p>
+<ul>
+<li>Am I really constrained to only these resources?</li>
+<li>Is this really the longest time window I realistically have?</li>
+<li>Does the project actually have to be in an area this small?</li>
+<li>Does the project really need to last this long?</li>
+</ul>
+<p>If the answers to these questions are <em>yes</em>, then you have gained a deeper understanding of the project&rsquo;s critical aspects. These are points that you will later need to justify to your peers during delivery.</p>
+<p>If any of your answers are <em>no</em>, then good job! You just made your work easier and saved effort. Remember, the ultimate goal of the algorithm is to save effort. Requirements cost effort because they are something you have to design around. So every requirement you can either purge or lessen the burden of immediately is time and money saved in the long-run.</p>
+<p>Do not hesitate to pressure your peers on requirements they impose on you. Make sure <em>they</em> can justify to you that their requirement is suitable. <strong>Every single project requirement and constraint must have a good reason for existing, and it is your job to make sure of it.</strong></p>
+<h2 id="delete-the-part">Delete the Part</h2>
+<p>Every part is a liability - something that will break in 5 years and something that needs to be repaired. Therefore, remove as many parts as you can in the design phase. Otherwise you are adding unnecessary effort for people later down the line.</p>
+<p>As you make your design, look carefully at every component you add - make sure its existence is fully justified. If you&rsquo;re unsure whether it&rsquo;s necessary, it&rsquo;s better to delete it now and add it later than to add it now and cause a burden.</p>
+<p>Of course, this is where you must begin to consider effort, cost, and risk. Which parts can I get away with removing? Is the risk I remove from adding this part worth the cost and effort I gain? Too many engineers will always take the path with the lowest risk, since safety is so heavily ingrained at work and failure is often shunned. Safety and success are good things to have, but you shouldn&rsquo;t burden high cost and effort for minimal safety or success gains. Again, the art of a good engineer lies in making these tradeoffs effectively.</p>
+<p>Oh, and make sure to ask yourself this question, if you haven&rsquo;t already: Is this project necessary? <strong>If you can delete your entire project, you save the maximal amount of effort.</strong> It won&rsquo;t feel like it at all - you will look back and see the time you spent requirement hunting and designing, and see all of it going to waste. But determining that a part or project doesn&rsquo;t have to exist at all is the greatest victory you can achieve: the same or similar functionality, for no further cost and effort. Whenever you delete something you don&rsquo;t need, rejoice.</p>
+<h2 id="simplify">Simplify</h2>
+<p>Notice that simplify is step 3 and not step 1? There&rsquo;s a good reason for that: <strong>Don&rsquo;t simplify things that don&rsquo;t need to exist in the first place.</strong> First remove everything that is unnecessary. <em>Then</em>, you can begin the process of tweaking, making improvements, simplifications, and all that jazz.</p>
+<p>But once it becomes time to simplify, do not skimp. Every simplification will make the product easier to maintain and more efficient. It will be far more expensive to make changes later on, so you should make them while you still can.</p>
+<h2 id="accelerate">Accelerate</h2>
+<p>Once your part/project is working and fully-proven, you need to find ways to lower the cost to produce, test, and distribute it.</p>
+<p>Start looking for ways to make your procedures faster. Is your part waiting idle on the production line for several hours at a time? This is no good! It means your production line is inefficient. Find a way to reshuffle your factory floor and make sure the part barely has a moment to breathe.</p>
+<p>Your product should go from raw material to fully-functional extremely rapidly. We already saved costs in the design of our product, and now we are saving costs in manufacturing. And we do that by speeding up the manufacturing process.</p>
+<p>Again, notice that acceleration is step 4. Don&rsquo;t start accelerating your production line, and then make a part simplifcation/change, and have to redo step 4. Order is key!</p>
+<h2 id="automate">Automate</h2>
+<p>Once your production line is perfected, and your product is perfected, it is time to automate. Take your carefully-crafted procedures and designs, and find ways to remove people (who are error-prone and expensive) and replace with machinery wherever possible and economical.</p>
+<p>Once again, order is key! Don&rsquo;t automate something that shouldn&rsquo;t exist in the first place.</p>
+<h1 id="applying-the-algorithm">Applying the Algorithm</h1>
+<p>Every engineering project should use the algorithm - even if you&rsquo;re not manufacturing on a large scale, you should still be implementing steps 1-3. It will help you catch mistakes and ensure that effort is not wasted.</p>
+<p>This algorithm will, by no means, make you a perfect engineer. But it will definitely make you a more efficient one.</p>
+<p>Therefore, memorize it. Know it by heart. Keep it at the front of your mind throughout the course of your project.</p>
+]]></content:encoded>
+    </item>
+    
   </channel>
 </rss>

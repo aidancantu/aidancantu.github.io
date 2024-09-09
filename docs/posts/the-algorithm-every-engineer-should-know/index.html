@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>The Algorithm that Every Engineer Should Know | Aidan Cantu</title>
+<meta name="keywords" content="">
+<meta name="description" content="Engineering is an art form. We like to imagine that engineers plan everything out and know exactly what will happen.
+But this is not reality. With limited information and limited time, designers have to make choices that effectively balance cost, effort, and risk. In any project, you can only minimize two of those three factors. Hence, the &ldquo;art&rdquo; of an engineer lies in their intuition - to make design choices they believe are optimal, while mitigating the difficulties of the real-world.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/the-algorithm-every-engineer-should-know/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.7da7716a1f2d0725f74c6ae7f8d6adafc43aabe2b366b65bfbf433448e2a2001.css" integrity="sha256-fadxah8tByX3TGrn&#43;Natr8Q6q&#43;KzZrZb&#43;/QzRI4qIAE=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/the-algorithm-every-engineer-should-know/">
+
+<meta name="twitter:title" content="The Algorithm that Every Engineer Should Know | Aidan Cantu" />
+<meta name="twitter:description" content="Engineering is an art form. We like to imagine that engineers plan everything out and know exactly what will happen.
+But this is not reality. With limited information and limited time, designers have to make choices that effectively balance cost, effort, and risk. In any project, you can only minimize two of those three factors. Hence, the &ldquo;art&rdquo; of an engineer lies in their intuition - to make design choices they believe are optimal, while mitigating the difficulties of the real-world." />
+<meta property="og:title" content="The Algorithm that Every Engineer Should Know | Aidan Cantu" />
+<meta property="og:description" content="Engineering is an art form. We like to imagine that engineers plan everything out and know exactly what will happen.
+But this is not reality. With limited information and limited time, designers have to make choices that effectively balance cost, effort, and risk. In any project, you can only minimize two of those three factors. Hence, the &ldquo;art&rdquo; of an engineer lies in their intuition - to make design choices they believe are optimal, while mitigating the difficulties of the real-world." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/the-algorithm-every-engineer-should-know/" />
+<meta property="article:section" content="posts" />
+  <meta property="article:published_time" content="2024-09-09T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2024-09-09T00:00:00&#43;00:00" />
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "The Algorithm that Every Engineer Should Know",
+      "item": "http://localhost:1313/posts/the-algorithm-every-engineer-should-know/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Algorithm that Every Engineer Should Know | Aidan Cantu",
+  "name": "The Algorithm that Every Engineer Should Know",
+  "description": "Engineering is an art form. We like to imagine that engineers plan everything out and know exactly what will happen.\nBut this is not reality. With limited information and limited time, designers have to make choices that effectively balance cost, effort, and risk. In any project, you can only minimize two of those three factors. Hence, the \u0026ldquo;art\u0026rdquo; of an engineer lies in their intuition - to make design choices they believe are optimal, while mitigating the difficulties of the real-world.",
+  "keywords": [
+    
+  ],
+  "wordCount" : "1173",
+  "inLanguage": "en",
+  "datePublished": "2024-09-09T00:00:00Z",
+  "dateModified": "2024-09-09T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/the-algorithm-every-engineer-should-know/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Aidan Cantu",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary-bg: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list-page {
+                background: var(--theme);
+            }
+
+            .list-page:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list-page:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+</head>
+
+<body class=" type-posts kind-page layout-" id="top"><script data-no-instant>
+function switchTheme(theme) {
+  switch (theme) {
+    case 'light':
+      document.body.classList.remove('dark');
+      break;
+    case 'dark':
+      document.body.classList.add('dark');
+      break;
+    
+    default:
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+  }
+}
+
+function isDarkTheme() {
+  return document.body.className.includes("dark");
+}
+
+function getPrefTheme() {
+  return localStorage.getItem("pref-theme");
+}
+
+function setPrefTheme(theme) {
+  switchTheme(theme)
+  localStorage.setItem("pref-theme", theme);
+}
+
+const toggleThemeCallbacks = {}
+toggleThemeCallbacks['main'] = (isDark) => {
+  
+  if (isDark) {
+    setPrefTheme('light');
+  } else {
+    setPrefTheme('dark');
+  }
+}
+
+
+
+
+window.addEventListener('toggle-theme', function() {
+  
+  const isDark = isDarkTheme()
+  for (const key in toggleThemeCallbacks) {
+    toggleThemeCallbacks[key](isDark)
+  }
+});
+
+
+function toggleThemeListener() {
+  
+  window.dispatchEvent(new CustomEvent('toggle-theme'));
+}
+
+</script>
+<script>
+  
+  (function() {
+    const defaultTheme = 'light';
+    const prefTheme = getPrefTheme();
+    const theme = prefTheme ? prefTheme : defaultTheme;
+
+    switchTheme(theme);
+  })();
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Aidan Cantu (Alt + H)">Aidan Cantu</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts" class="active"
+                >Posts
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About Me"
+                >About Me
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main post">
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">The Algorithm that Every Engineer Should Know</h1>
+    <div class="post-meta"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>September 9, 2024</span></span>
+
+      
+      
+    </div>
+  </header> 
+  <div class="post-content"><p>Engineering is an art form. We like to imagine that engineers plan everything out and know exactly what will happen.</p>
+<p>But this is not reality. With limited information and limited time, designers have to make choices that effectively balance cost, effort, and risk. In any project, you can only minimize two of those three factors. Hence, the &ldquo;art&rdquo; of an engineer lies in their intuition - to make design choices <em>they</em> believe are optimal, while mitigating the difficulties of the real-world. And the best engineers know where to make tradeoffs in their work.</p>
+<p>It&rsquo;s hard (if not impossible) to &ldquo;train&rdquo; your intuition to be better, other than by learning more about your field. But, you <em>can</em> change your workflows to be more efficient. The Algorithm, as it is dubbed, is a 5-step procedure that engineers should follow to ensure effort is not wasted.</p>
+<h1 id="the-algorithm">The Algorithm<a hidden class="anchor" aria-hidden="true" href="#the-algorithm">¶</a></h1>
+<ol>
+<li>Question and Understand the Requirements</li>
+<li>Delete Unnecessary Parts</li>
+<li>Simplify</li>
+<li>Accelerate</li>
+<li>Automate</li>
+</ol>
+<p>If you complete your project in that exact order, you will have an efficient workflow. Let me explain each step:</p>
+<h2 id="question-the-requirements">Question the Requirements<a hidden class="anchor" aria-hidden="true" href="#question-the-requirements">¶</a></h2>
+<p>Any great project is initially just a design on paper. But before any design is started, the engineer must know what they are designing.</p>
+<p>That&rsquo;s a pretty obvious statement, yet too many engineers jump into projects before they fully understand what they want their final project to be. You need hard numbers, facts, and measureable objectives to achieve. You should be asking:</p>
+<ul>
+<li>What is my budget/available resources?</li>
+<li>How long do I have?</li>
+<li>What is the available space for my product?</li>
+<li>How long does my product need to last for?</li>
+</ul>
+<p>And, most importantly, you absolutely must know: <strong>What is the goal of this project?</strong> You need to go to superiors and co-workers to answer these questions. Talk to people. If a requirement is unclear, discuss it thoroughly.</p>
+<p>And then, finally, you can begin to question the requirements. Now you need to turn around and ask:</p>
+<ul>
+<li>Am I really constrained to only these resources?</li>
+<li>Is this really the longest time window I realistically have?</li>
+<li>Does the project actually have to be in an area this small?</li>
+<li>Does the project really need to last this long?</li>
+</ul>
+<p>If the answers to these questions are <em>yes</em>, then you have gained a deeper understanding of the project&rsquo;s critical aspects. These are points that you will later need to justify to your peers during delivery.</p>
+<p>If any of your answers are <em>no</em>, then good job! You just made your work easier and saved effort. Remember, the ultimate goal of the algorithm is to save effort. Requirements cost effort because they are something you have to design around. So every requirement you can either purge or lessen the burden of immediately is time and money saved in the long-run.</p>
+<p>Do not hesitate to pressure your peers on requirements they impose on you. Make sure <em>they</em> can justify to you that their requirement is suitable. <strong>Every single project requirement and constraint must have a good reason for existing, and it is your job to make sure of it.</strong></p>
+<h2 id="delete-the-part">Delete the Part<a hidden class="anchor" aria-hidden="true" href="#delete-the-part">¶</a></h2>
+<p>Every part is a liability - something that will break in 5 years and something that needs to be repaired. Therefore, remove as many parts as you can in the design phase. Otherwise you are adding unnecessary effort for people later down the line.</p>
+<p>As you make your design, look carefully at every component you add - make sure its existence is fully justified. If you&rsquo;re unsure whether it&rsquo;s necessary, it&rsquo;s better to delete it now and add it later than to add it now and cause a burden.</p>
+<p>Of course, this is where you must begin to consider effort, cost, and risk. Which parts can I get away with removing? Is the risk I remove from adding this part worth the cost and effort I gain? Too many engineers will always take the path with the lowest risk, since safety is so heavily ingrained at work and failure is often shunned. Safety and success are good things to have, but you shouldn&rsquo;t burden high cost and effort for minimal safety or success gains. Again, the art of a good engineer lies in making these tradeoffs effectively.</p>
+<p>Oh, and make sure to ask yourself this question, if you haven&rsquo;t already: Is this project necessary? <strong>If you can delete your entire project, you save the maximal amount of effort.</strong> It won&rsquo;t feel like it at all - you will look back and see the time you spent requirement hunting and designing, and see all of it going to waste. But determining that a part or project doesn&rsquo;t have to exist at all is the greatest victory you can achieve: the same or similar functionality, for no further cost and effort. Whenever you delete something you don&rsquo;t need, rejoice.</p>
+<h2 id="simplify">Simplify<a hidden class="anchor" aria-hidden="true" href="#simplify">¶</a></h2>
+<p>Notice that simplify is step 3 and not step 1? There&rsquo;s a good reason for that: <strong>Don&rsquo;t simplify things that don&rsquo;t need to exist in the first place.</strong> First remove everything that is unnecessary. <em>Then</em>, you can begin the process of tweaking, making improvements, simplifications, and all that jazz.</p>
+<p>But once it becomes time to simplify, do not skimp. Every simplification will make the product easier to maintain and more efficient. It will be far more expensive to make changes later on, so you should make them while you still can.</p>
+<h2 id="accelerate">Accelerate<a hidden class="anchor" aria-hidden="true" href="#accelerate">¶</a></h2>
+<p>Once your part/project is working and fully-proven, you need to find ways to lower the cost to produce, test, and distribute it.</p>
+<p>Start looking for ways to make your procedures faster. Is your part waiting idle on the production line for several hours at a time? This is no good! It means your production line is inefficient. Find a way to reshuffle your factory floor and make sure the part barely has a moment to breathe.</p>
+<p>Your product should go from raw material to fully-functional extremely rapidly. We already saved costs in the design of our product, and now we are saving costs in manufacturing. And we do that by speeding up the manufacturing process.</p>
+<p>Again, notice that acceleration is step 4. Don&rsquo;t start accelerating your production line, and then make a part simplifcation/change, and have to redo step 4. Order is key!</p>
+<h2 id="automate">Automate<a hidden class="anchor" aria-hidden="true" href="#automate">¶</a></h2>
+<p>Once your production line is perfected, and your product is perfected, it is time to automate. Take your carefully-crafted procedures and designs, and find ways to remove people (who are error-prone and expensive) and replace with machinery wherever possible and economical.</p>
+<p>Once again, order is key! Don&rsquo;t automate something that shouldn&rsquo;t exist in the first place.</p>
+<h1 id="applying-the-algorithm">Applying the Algorithm<a hidden class="anchor" aria-hidden="true" href="#applying-the-algorithm">¶</a></h1>
+<p>Every engineering project should use the algorithm - even if you&rsquo;re not manufacturing on a large scale, you should still be implementing steps 1-3. It will help you catch mistakes and ensure that effort is not wasted.</p>
+<p>This algorithm will, by no means, make you a perfect engineer. But it will definitely make you a more efficient one.</p>
+<p>Therefore, memorize it. Know it by heart. Keep it at the front of your mind throughout the course of your project.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+    <div class="comments-separator"></div>
+</article>
+    </main>
+    
+<footer class="footer">
+  <span>&copy; 2024 <a href="http://localhost:1313/">Aidan Cantu</a></span><span style="display: inline-block; margin-left: 1em;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span style="display: inline-block; margin-left: 1em;">
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+    <a href="https://github.com/reorx/hugo-PaperModX/" rel="noopener" target="_blank">PaperModX</a>
+  </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  (function() {
+     
+    const disableThemeToggle = '' == '1';
+    if (disableThemeToggle) {
+      return;
+    }
+
+    let button = document.getElementById("theme-toggle")
+    
+    button.removeEventListener('click', toggleThemeListener)
+    
+    button.addEventListener('click', toggleThemeListener)
+  })();
+</script>
+
+<script>
+  (function () {
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    const disableSmoothScroll = '' == '1';
+    const enableInstantClick = '' == '1';
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
+      return;
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
+        });
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
+    });
+  })();
+</script>
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+<script>
+  if (window.scrollListeners) {
+    
+    for (const listener of scrollListeners) {
+      window.removeEventListener('scroll', listener)
+    }
+  }
+  window.scrollListeners = []
+</script>
+
+
+
+<script src="/js/medium-zoom.min.js" data-no-instant
+></script>
+
+
+
+
+<script>
+  
+  
+  (function() {
+    const enableTocScroll = '' == '1'
+    if (!enableTocScroll) {
+      return
+    }
+    if (!document.querySelector('.toc')) {
+      console.log('no toc found, ignore toc scroll')
+      return
+    }
+    
+
+    
+    const scrollListeners = window.scrollListeners
+    const headings = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id]');
+    const activeClass = 'active';
+
+    
+    let activeHeading = headings[0];
+    getLinkByHeading(activeHeading).classList.add(activeClass);
+
+    const onScroll = () => {
+      const passedHeadings = [];
+      for (const h of headings) {
+        
+        if (getOffsetTop(h) < 5) {
+          passedHeadings.push(h)
+        } else {
+          break;
+        }
+      }
+      if (passedHeadings.length > 0) {
+        newActiveHeading = passedHeadings[passedHeadings.length - 1];
+      } else {
+        newActiveHeading = headings[0];
+      }
+      if (activeHeading != newActiveHeading) {
+        getLinkByHeading(activeHeading).classList.remove(activeClass);
+        activeHeading = newActiveHeading;
+        getLinkByHeading(activeHeading).classList.add(activeClass);
+      }
+    }
+
+    let timer = null;
+    const scrollListener = () => {
+      if (timer !== null) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(onScroll, 50)
+    }
+    window.addEventListener('scroll', scrollListener, false);
+    scrollListeners.push(scrollListener)
+
+    function getLinkByHeading(heading) {
+      const id = encodeURI(heading.getAttribute('id')).toLowerCase();
+      return document.querySelector(`.toc ul li a[href="#${id}"]`);
+    }
+
+    function getOffsetTop(heading) {
+      if (!heading.getClientRects().length) {
+        return 0;
+      }
+      let rect = heading.getBoundingClientRect();
+      return rect.top
+    }
+  })();
+  </script>
+
+
+
+<script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+</script>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async>
+</script>
+
+</body>
+
+</html>

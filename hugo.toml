@@ -1,5 +1,28 @@
 baseURL = 'https://aidancantu.com/'
 languageCode = 'en-us'
-title = 'Cantu Page'
+title = 'Aidan Cantu'
 theme = 'papermodx'
 publishDir = 'docs'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  # customCSS = ["css/custom.css"]
+  # customJS = ["js/custom.js"]
+  mathjax = true
+
+[blogdown]
+hugo_version = '0.128.0'  # Adjust this to your Hugo version
+
+[menus]
+  [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 20
+  [[menus.main]]
+    name = 'About Me'
+    pageRef = '/about'
+    weight = 30
